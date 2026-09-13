@@ -2,6 +2,8 @@
 
 In-class Kaggle competition (2026). Classify Bitcoin transactions as **licit** or **illicit** using graph-structured transaction data.
 
+**Student:** E1122264
+
 ## Setup
 
 ```bash
@@ -18,15 +20,15 @@ Place competition data in `data/` (not committed — see `.gitignore`).
 data/              # Kaggle dataset (local only)
 notebooks/         # Exploration notebooks
 submissions/       # Generated submission CSVs
-e1234567.ipynb     # Final submission notebook (rename to your NUS ID)
-e1234567.pdf       # Report (submit separately, not in repo)
+e1122264.ipynb     # Final submission notebook
+e1122264.pdf       # Report (submit separately, not in repo)
 requirements.txt
 ```
 
 ## Kaggle
 
 1. Join the competition on Kaggle.
-2. Set your Kaggle **Display Name** to your NUS student number (e.g. `e1234567`).
+2. Set your Kaggle **Display Name** to `E1122264`.
 3. Download data into `data/`.
 
 ## Submission format
@@ -50,5 +52,3 @@ index,target
 | Beat baseline + working, reproducible, documented code | 5 |
 | Report (≤4 pages, due 25 Oct 2026) | 5 |
 | Final private leaderboard ranking | 10 |
-
-Replace `e1234567` in filenames with your actual NUS student number.
