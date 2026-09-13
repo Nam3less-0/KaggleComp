@@ -1,0 +1,16 @@
+# Core — pin versions as you finalize your submission
+numpy
+pandas
+scikit-learn
+matplotlib
+seaborn
+jupyter
+kaggle
+
+# Graph / ML (uncomment as needed)
+# torch
+# torch-geometric
+# xgboost
+# lightgbm
+# catboost
+# networkx
