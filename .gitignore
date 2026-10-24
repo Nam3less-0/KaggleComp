@@ -3,6 +3,7 @@ __pycache__/
 *.py[cod]
 *.egg-info/
 .venv/
+.venv-repro/
 venv/
 env/
 .python-version
@@ -10,15 +11,12 @@ env/
 # Jupyter
 .ipynb_checkpoints/
 
-# Data (download from Kaggle — do not commit)
-data/
-*.csv
+# train.csv is ~440MB — over GitHub's 100MB file limit
+data/train.csv
+
 *.parquet
 *.pkl
 *.joblib
-
-# Submissions (regenerate locally)
-submissions/
 
 # IDE / OS
 .idea/

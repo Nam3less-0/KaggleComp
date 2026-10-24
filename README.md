@@ -1,54 +1,31 @@
 # BT4012 — Fraudulent Bitcoin Transaction Detection
 
-In-class Kaggle competition (2026). Classify Bitcoin transactions as **licit** or **illicit** using graph-structured transaction data.
+**Joshua Chen** (E1122264)
 
-**Student:** E1122264
+This project ranks Bitcoin payments as licit or illicit on the Elliptic transaction graph. Earlier weeks are used to learn; later weeks are used to check and to score. That matches real fraud monitoring: you have to rank *new* payments, not a shuffled copy of the past.
 
-## Setup
+Most training rows have no label. Blanks are treated as unknown, not as licit. Among labeled payments, illicit is the rare class. We report accuracy, precision, recall, and F1, and we rank models by ROC-AUC.
+
+## Approach
+
+The supplied transaction features are filtered for redundancy, then ranked inside each week so scale drift across time matters less. The payment graph is used by spreading the model’s own suspicion along same-week neighbors, not by copying old illicit labels — those labels do not exist on later weeks. Logistic regression is the linear baseline. LightGBM, XGBoost, and CatBoost vote on rank; a smaller companion model without neighbor scores provides a minority vote.
+
+## Run
 
 ```bash
 python -m venv .venv
-.venv\Scripts\activate        # Windows
+.venv\Scripts\activate
 pip install -r requirements.txt
 ```
 
-Place competition data in `data/` (not committed — see `.gitignore`).
+`test.csv`, `txs_edgelist.csv`, and `sample_submission.csv` are in `data/`. Add `train.csv` there as well (it is too large for GitHub, so it is not in the repo). Open `e1122264.ipynb` and run all cells. Scores are written to `submissions/`.
 
-## Repository layout
+## Layout
 
 ```
-data/              # Kaggle dataset (local only)
-notebooks/         # Exploration notebooks
-submissions/       # Generated submission CSVs
-e1122264.ipynb     # Final submission notebook
-e1122264.pdf       # Report (submit separately, not in repo)
-requirements.txt
+e1122264.ipynb   notebook
+data/            input tables (not in git)
+submissions/     output scores (not in git)
 ```
 
-## Kaggle
-
-1. Join the competition on Kaggle.
-2. Set your Kaggle **Display Name** to `E1122264`.
-3. Download data into `data/`.
-
-## Submission format
-
-CSV with header:
-
-```csv
-index,target
-0,0.9
-1,0.1
-```
-
-- **Metric:** ROC-AUC
-- **Limit:** 3 submissions per day
-- **Deadline:** 24 Oct 2026, 11:55 PM SGT
-
-## Grading (20%)
-
-| Component | Points |
-|-----------|--------|
-| Beat baseline + working, reproducible, documented code | 5 |
-| Report (≤4 pages, due 25 Oct 2026) | 5 |
-| Final private leaderboard ranking | 10 |
+Repo: https://github.com/Nam3less-0/KaggleComp
