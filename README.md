@@ -24,8 +24,8 @@ pip install -r requirements.txt
 
 ```
 e1122264.ipynb   notebook
-data/            input tables (not in git)
-submissions/     output scores (not in git)
+data/            input tables 
+submissions/     output scores
 ```
 
 Repo: https://github.com/Nam3less-0/KaggleComp
