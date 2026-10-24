@@ -1,16 +1,19 @@
 # Core — pin versions as you finalize your submission
 numpy
 pandas
+scipy
 scikit-learn
 matplotlib
 seaborn
 jupyter
 kaggle
 
-# Graph / ML (uncomment as needed)
-# torch
+# ML models
+xgboost
+lightgbm
+
+# Graph / ML
+torch
+catboost
 # torch-geometric
-# xgboost
-# lightgbm
-# catboost
 # networkx
