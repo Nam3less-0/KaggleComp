@@ -1,4 +1,4 @@
-# BT4012 — Fraudulent Bitcoin Transaction Detection
+# BT4012 - Fraudulent Bitcoin Transaction Detection
 
 **Joshua Chen** (E1122264)
 
